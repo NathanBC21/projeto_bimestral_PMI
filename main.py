@@ -8,22 +8,22 @@ import matplotlib.pyplot as plt
 imagem = cv2.imread("imagem_exame.jpg")
 cv2.imshow("imagem", imagem)
 
-#2-Pré_processamento
+#2-Pré processamento
 
 #Converte para a escala de cinza
 imagem_cinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
 cv2.imshow("escala_cinza", imagem_cinza)
 cv2.imwrite("escala_cinza.png", imagem_cinza)
 
-#Aplicação de equalização de hsitograma
+#Aplicação de equalização de histograma
 imagem_equalizada = cv2.equalizeHist(imagem_cinza)
 cv2.imshow("imagem equalizada", imagem_equalizada)
 cv2.imwrite("imagem_equalizada.png", imagem_equalizada)
 
 #3-Modificação de Cores
 
-#Conversão da imagem original par ao espaço de cores HSV
-imagem_hsv = cv2.cvtColor(imagem, cv2.COLOR_BGR2HSV )
+#Conversão da imagem original para o espaço de cores HSV
+imagem_hsv = cv2.cvtColor(imagem, cv2.COLOR_BGR2HSV)
 cv2.imshow("imagme hsv", imagem_hsv)
 cv2.imwrite("imagme_hsv.png", imagem_hsv)
 
@@ -59,7 +59,7 @@ cv2.imwrite("ajuste_contraste.png", ajuste_contraste)
 
 #5-Redimensionamento e Interpolação
 
-#Redimensão da imagem em 50% usando interpolação bicúbica.
+#Imagem redimensionada em 50% usando interpolação bicúbica.
 altura_original, largura_original = imagem.shape[:2]
 nova_largura = int(largura_original * 0.5)
 nova_altura = int(altura_original * 0.5)
@@ -67,7 +67,7 @@ imagem_menor50 = cv2.resize(imagem, (nova_largura, nova_altura), interpolation=c
 cv2.imshow("imagem_menor50", imagem_menor50)
 cv2.imwrite("imagem_menor50.png", imagem_menor50)
 
-#Redimensão da imagem em 200% usando interpolação linear.
+#Imagem redimensionada em 200% usando interpolação linear.
 altura_original, largura_original = imagem.shape[:2]
 nova_largura = int(largura_original * 2)
 nova_altura = int(altura_original * 2)
